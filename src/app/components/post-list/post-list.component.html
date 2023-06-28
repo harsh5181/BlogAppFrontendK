@@ -1,0 +1,98 @@
+<!-- <div style="min-height: 78vh;"> -->
+<!-- <h2>List of Posts</h2> -->
+<!-- <table class="table table-striped">
+        <thead>
+
+            <tr>
+                <th> Id</th>
+                <th> Title</th>
+                <th> Image</th>
+                <th> Content/th>
+                <th> Category</th>
+                <th> Actions</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of posts">
+                <td> {{ post.id }} </td>
+                <td> {{ post.title }} </td>
+                <td> {{ post.image }} </td>
+                <td> {{ post.content }} </td>
+                <td> {{ post.category }} </td>
+                <td>
+                    <button (click)="updatePost(post.id)" class="btn btn-info">Update</button>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                    <button (click)="deletePost(post.id)" class="btn btn-danger"
+                        style="margin-left: 10px">
+                        Delete</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table> -->
+
+<!-- <div class="card">
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div> -->
+
+<div class="card" *ngFor="let post of posts">
+    <div class="content">
+        <h2>{{ post.title }} </h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <!-- <div class="fakeimg" style="height:200px;">{{ post.image }}</div> -->
+        <div class="fakeimg">
+            <img style="border-radius: 5px; height: 300px;" sizes="100px" mat-card-image src="{{post.image}}"
+                alt="Blog Photo">
+        </div>
+        <p>{{ post.category }}</p>
+        <p>{{ post.content }}</p>
+        <td>
+            <button (click)="viewComment(post.id)" class="btn btn-info">View Comments</button>
+        </td>
+        <td>
+            <button (click)="createComment(post.id)" class="btn btn-info">Write a Comment</button>
+        </td>
+        <td>
+            <button *ngIf="adminService.adminLogin" (click)="updatePost(post.id)" class="btn btn-info">Update</button>
+
+
+            <button *ngIf="adminService.adminLogin" (click)="deletePost(post.id)" class="btn btn-danger"
+                style="margin-left: 10px">
+                Delete</button>
+        </td>
+    </div>
+
+    <!-- <div class="card" *ngFor="let post of posts">
+        <h2>{{ post.title }} </h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <!-- <div class="fakeimg" style="height:200px;">{{ post.image }}</div>
+        <img style="border-radius: 5px; height: 400px;" sizes="100px" mat-card-image src="{{post.image}}" alt="Blog Photo">
+        <p>{{ post.category }}</p>
+        <p>{{ post.content }}</p>
+        <td>
+            <button (click)="viewComment(post.id)" class="btn btn-info">View Comments</button>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </td>
+        <td>-
+            <button (click)="createComment(post.id)" class="btn btn-info">Write a Comment</button>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </td>
+        <td>
+            <button (click)="updatePost(post.id)" class="btn btn-info">Update</button>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+            <button (click)="deletePost(post.id)" class="btn btn-danger"
+                style="margin-left: 10px">
+                Delete</button>
+        </td>
+
+    </div> -->
+
+    <!-- </div> -->
