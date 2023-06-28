@@ -54,18 +54,18 @@
         <p>{{ post.category }}</p>
         <p>{{ post.content }}</p>
         <td>
-            <button (click)="viewComment(post.id)" class="btn btn-info">View Comments</button>
+            <button (click)="viewComment(post.id)" class="btn btn-info btn-sm">View Comments<i class="fa fa-eye" aria-hidden="true"></i></button>
         </td>
         <td>
-            <button (click)="createComment(post.id)" class="btn btn-info">Write a Comment</button>
+            <button (click)="createComment(post.id)" class="btn btn-info btn-sm">Write a Comment  <i class="fa fa-solid fa fa-comment fa fa-beat-fade" style="color: #000000;"></i></button>
         </td>
         <td>
-            <button *ngIf="adminService.adminLogin" (click)="updatePost(post.id)" class="btn btn-info">Update</button>
+            <button *ngIf="adminService.adminLogin" (click)="updatePost(post.id)" class="btn btn-info btn-sm">Update <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 
 
-            <button *ngIf="adminService.adminLogin" (click)="deletePost(post.id)" class="btn btn-danger"
+            <button *ngIf="adminService.adminLogin" (click)="deletePost(post.id)" class="btn btn-danger btn-sm"
                 style="margin-left: 10px">
-                Delete</button>
+                Delete<i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>
     </div>
 

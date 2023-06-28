@@ -11,6 +11,7 @@ export class CreateCommentComponent {
 
   id: number
   comment: any = new Comment();
+  error: any;
   //comment: any;
   constructor(private commentService: CommentService,
     private route: ActivatedRoute,
@@ -22,13 +23,15 @@ export class CreateCommentComponent {
 
   }
 
-  savePost() {
+  saveComment() {
     this.commentService.createComment(this.comment, this.id).subscribe(data => {
       console.log(data);
       alert("Comment Posted Successfully");
       this.goToCommentList();
     },
-      error => console.log(error));
+      (error) => {
+      console.log(error);
+      this.error=error;});
   }
 
   goToCommentList() {
@@ -37,7 +40,7 @@ export class CreateCommentComponent {
 
   onSubmit() {
     console.log(this.comment);
-    this.savePost();
+    this.saveComment();
   }
 
 }

@@ -14,6 +14,7 @@ export class CreatePostComponent {
   post: Post = new Post();
   userEmail: string|null;
   pid: any;
+  error: any;
   constructor(private postService: PostService,
     private apiService: APIsService,
     private router: Router) { }
@@ -31,7 +32,9 @@ export class CreatePostComponent {
       alert("Blog Posted Successfully");
       this.goToPostList();
     },
-      error => console.log(error));
+    (error) => {
+      console.log(error);
+      this.error=error;});
   }
 
   goToPostList() {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Comment } from 'src/app/entities/comment';
 import { CommentService } from 'src/app/service/comment.service';
 
 @Component({
@@ -33,6 +34,15 @@ export class GetCommentComponent {
     this.router.navigate(['/postlist']);
   }
 
+  refreshData() {
+    this.commentService.getCommentsByPostId(this.id).subscribe( (data) => {
+      console.log(data);
+      this.comments = data;
+      console.log(data);
+    },
+    (error) => console.log(error));
+  }
+
   updateComment(id: number) {
     console.log("Post id:",this.id,"Comment id:", id);
     this.router.navigate(['updatecomment', this.id, id]); //this.id is post id from params above and, "id" is id of comment
@@ -42,6 +52,11 @@ export class GetCommentComponent {
     if (confirm("Do you want to delete?")) {
       this.commentService.deleteCommentById(this.id, id).subscribe(data => {
         console.log(data);
+        // this.router.navigate(['/viewcomment',this.id]);
+        this.refreshData();
+      }, (error) => {
+        this.refreshData();
+        console.log(error);
       })
     } 
   } 

@@ -109,6 +109,21 @@
 
     </div> 
 
+    <div class="darker mt-4 text-justify " id="commen"> 
+
+        <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40"> 
+        <span>&nbsp;&nbsp;&nbsp;</span>
+
+        <h4>BlogApp Team</h4> 
+
+        <span>&nbsp;- team@blogapp.com</span> 
+
+        <br> 
+
+        <p>Thank you for an awesome post on Blog App!!. Make App better with your posts and interactions. Publish your passions, your way. Create a unique and beautiful content with our app.</p> 
+
+    </div>
+
     <div class="darker mt-4 text-justify " id="commen" *ngFor="let comment of comments"> 
 
         <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40"> 
@@ -122,12 +137,12 @@
 
         <p>{{ comment.content }}</p> 
         <td>
-            <button (click)="updateComment(comment.id)" class="btn btn-info" >Update</button>
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <button (click)="updateComment(comment.id)" class="btn btn-info btn-sm" >Update<i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            
     
-            <button (click)="deleteComment(comment.id)" class="btn btn-danger"
+            <button (click)="deleteComment(comment.id)" class="btn btn-danger btn-sm"
                 style="margin-left: 10px">
-                Delete</button>
+                Delete<i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>
     </div> 
     
