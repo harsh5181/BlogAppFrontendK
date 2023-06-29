@@ -17,7 +17,7 @@
           <a *ngIf="authenticate.isUserLoggedIn()" class="nav-link" routerLink="/createpost">Create Blog</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="adminService.adminLogin" class="nav-link" routerLink="/admin">Admin</a>
+          <a *ngIf="adminService.isUserAdmin()" class="nav-link" routerLink="/admin">Admin</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/about">AboutUs</a>

@@ -5,7 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
 
-  adminLogin:boolean=false;
+  adminLogin:any=false;
 
   constructor() { }
+    isUserAdmin() {
+    this.adminLogin = localStorage.getItem('admin');
+    return !(this.adminLogin === null);
+  }
 }

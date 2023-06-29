@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Comment } from 'src/app/entities/comment';
+import { AdminService } from 'src/app/service/admin.service';
 import { CommentService } from 'src/app/service/comment.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class GetCommentComponent {
   comments: any[]=[];
   constructor(private commentService: CommentService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    public adminService:AdminService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

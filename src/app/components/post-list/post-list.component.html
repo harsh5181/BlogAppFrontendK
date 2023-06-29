@@ -60,10 +60,10 @@
             <button (click)="createComment(post.id)" class="btn btn-info btn-sm">Write a Comment  <i class="fa fa-solid fa fa-comment fa fa-beat-fade" style="color: #000000;"></i></button>
         </td>
         <td>
-            <button *ngIf="adminService.adminLogin" (click)="updatePost(post.id)" class="btn btn-info btn-sm">Update <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            <button *ngIf="adminService.isUserAdmin()" (click)="updatePost(post.id)" class="btn btn-info btn-sm">Update <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 
 
-            <button *ngIf="adminService.adminLogin" (click)="deletePost(post.id)" class="btn btn-danger btn-sm"
+            <button *ngIf="adminService.isUserAdmin()" (click)="deletePost(post.id)" class="btn btn-danger btn-sm"
                 style="margin-left: 10px">
                 Delete<i class="fa fa-trash" aria-hidden="true"></i></button>
         </td>

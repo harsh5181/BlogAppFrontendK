@@ -14,5 +14,6 @@ export class AuthenticationService {
   logOut() {
     sessionStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('admin');
   }
 }
