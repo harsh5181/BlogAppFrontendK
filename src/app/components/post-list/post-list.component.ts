@@ -45,7 +45,9 @@ export class PostListComponent {
       this.postService.deletePost(id).subscribe(data => {
         console.log(data);
         this.getPosts();
-      })
+      },(error)=>{
+        this.getPosts();
+      });
     } 
   } 
 

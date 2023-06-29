@@ -36,7 +36,7 @@ export class UpdateCommentComponent {
   }
 
   goToCommentList() {
-    this.router.navigate(['postlist']);
+    this.router.navigate(['viewcomment',this.pid]);
   }
 
 }

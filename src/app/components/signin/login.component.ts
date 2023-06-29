@@ -50,7 +50,7 @@ export class LoginComponent {
   //   } else {
       this.signinService.login(this.loginForm).subscribe(
         (response: any) => {
-       
+          console.log(response.role[0]);
           localStorage.setItem('user', this.loginForm.username);
           // Handle successful login
           if(response.role[0]==="ROLE_ADMIN"){
